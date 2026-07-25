@@ -323,7 +323,7 @@ mainForm.addEventListener('submit',e=>{
     fetch(SCRIPT_URL,{method:'POST',body:fd,mode:'no-cors'}).catch(()=>{});
     // whatsapp
     const msg=encodeURIComponent(`Hello Ma'am,\n\nI am interested in your program. Here are my details:\n\nName: ${name}\nPhone: ${phone}\nAge: ${age}\nGender: ${gender}\nProfession: ${profession}\n\nPlease share next steps. Thank you!`);
-    if(typeof fbq!=='undefined'){fbq('track','Contact');fbq('track','Lead',{content_name:'WhatsApp Form Submission',content_category:'Lead Generation',content_source:sourceInfo.value})}
+    if(typeof fbq!=='undefined'){fbq('track','Contact');}
     window.open(`https://wa.me/${WA_NUMBER_INT}?text=${msg}`,'_blank');
     closeForm();
 });
